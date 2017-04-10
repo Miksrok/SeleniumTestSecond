@@ -15,6 +15,9 @@ public class AdminPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private By catalogLink = By.id("subtab-AdminCatalog");
+    private By categoryLink = By.id("subtab-AdminCategories");
+
 
     public AdminPage(WebDriver driver) {
         this.driver = driver;
@@ -24,15 +27,14 @@ public class AdminPage {
 
     public void clickCategory() throws InterruptedException {
         Actions action = new Actions(driver) ;
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("subtab-AdminCatalog")));
-        WebElement element = driver.findElement(By.id("subtab-AdminCatalog"));
-        WebElement elem = driver.findElement(By.id("subtab-AdminCategories"));
-        action.moveToElement(element)
-                .moveToElement(elem)
+        wait.until(ExpectedConditions.visibilityOfElementLocated(this.catalogLink));
+        WebElement catalogLink = driver.findElement(this.catalogLink);
+        WebElement categoryLink = driver.findElement(this.categoryLink);
+        action.moveToElement(catalogLink)
+                .moveToElement(categoryLink)
                 .click()
                 .build()
                 .perform();
-
     }
 
     public void createNewCategory() {
