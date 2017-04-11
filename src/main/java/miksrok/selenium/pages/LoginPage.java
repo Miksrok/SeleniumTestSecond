@@ -11,6 +11,10 @@ public class LoginPage{
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private String loginPage = "http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0";
+    private By login = By.id("email");
+    private By password = By.id("passwd");
+    private By submitLoginButton = By.name("submitLogin");
 
     public LoginPage (WebDriver driver){
         this.driver = driver;
@@ -18,13 +22,13 @@ public class LoginPage{
     }
 
     public void openLoginPage(){
-        driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0");
+        driver.get(loginPage);
     }
 
     public AdminPage login(String login, String password){
-        driver.findElement(By.id("email")).sendKeys(login);
-        driver.findElement(By.id("passwd")).sendKeys(password);
-        driver.findElement(By.name("submitLogin")).click();
+        driver.findElement(this.login).sendKeys(login);
+        driver.findElement(this.password).sendKeys(password);
+        driver.findElement(this.submitLoginButton).click();
         return new AdminPage(driver);
     }
 

@@ -66,4 +66,8 @@ public class AdminPage {
         submitFilterButton.click();
         wait.until(ExpectedConditions.textToBePresentInElementLocated(this.text, name));
     }
+
+    public void closeBrowser(){
+        driver.quit();
+    }
 }

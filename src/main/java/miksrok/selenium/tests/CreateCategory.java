@@ -28,6 +28,7 @@ public class CreateCategory extends BaseScript {
         }else{
             System.out.println("category doesn't create");
         }
+        adminPage.closeBrowser();
 
 
 

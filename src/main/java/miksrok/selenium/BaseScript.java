@@ -11,16 +11,18 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
  */
 public abstract class BaseScript {
 
+    private final static String CHROME_PATH = "src\\main\\resources\\chromedriver.exe";
+    private final static String FIREFOX_PATH = "src\\main\\resources\\geckodriver.exe";
 
-    public static WebDriver getDriver(String browser) {
+    private static WebDriver getDriver(String browser) {
 
         switch (browser){
             case "chrome":{
-                System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", CHROME_PATH);
                 return new ChromeDriver();
             }
             default:{
-                System.setProperty("webdriver.gecko.driver", "src\\main\\resources\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", FIREFOX_PATH);
                 return new FirefoxDriver();
             }
         }
