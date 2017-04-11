@@ -19,7 +19,7 @@ public class CreateCategory extends BaseScript {
 
     public static void main(String[] args) throws InterruptedException {
 
-        LoginPage loginPage = new LoginPage(getDriver(chromeBrowser));
+        LoginPage loginPage = new LoginPage(getConfiguredDriver(chromeBrowser));
         loginPage.openLoginPage();
         AdminPage adminPage = loginPage.login(login, password);
         adminPage.clickCategory();

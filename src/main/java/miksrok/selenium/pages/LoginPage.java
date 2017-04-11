@@ -19,8 +19,6 @@ public class LoginPage{
 
     public void openLoginPage(){
         driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0");
-        driver.manage().window().maximize();
-
     }
 
     public AdminPage login(String login, String password){
