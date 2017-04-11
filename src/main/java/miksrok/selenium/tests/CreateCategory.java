@@ -26,7 +26,7 @@ public class CreateCategory extends BaseScript {
         if(adminPage.createNewCategory(categoryName)) {
             adminPage.filterByName(categoryName);
         }else{
-            System.out.println("category doesn't create");
+            System.out.println("category wasn't created");
         }
         adminPage.closeBrowser();
 
