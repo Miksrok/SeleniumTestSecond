@@ -1,6 +1,5 @@
 package miksrok.selenium.pages;
 
-import miksrok.selenium.BaseScript;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,6 +19,8 @@ public class LoginPage{
 
     public void openLoginPage(){
         driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0");
+        driver.manage().window().maximize();
+
     }
 
     public AdminPage login(String login, String password){
